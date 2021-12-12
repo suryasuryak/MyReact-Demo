@@ -1,0 +1,112 @@
+[
+    {
+        "employee_id": 1000,
+        "name": "Ram Krishna",
+        "status": "bench",
+        "manager": "rohit",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["Spring Boot", "Core Java", "Angular"],
+        "experience": "7"
+    },
+    {
+        "employee_id": 1001,
+        "name": "Janardhan",
+        "status": "bench",
+        "manager": "rohit",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",       
+        "profiles":["PL SQL", "Core Java", "SQL"],
+        "experience": "4"
+    },
+    {
+        "employee_id": 1002,
+        "name": "Deeraj Keshav",
+        "status": "bench",
+        "manager": "rohit",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["React JS", "Core Java"],
+        "experience": "5"
+    },
+    {
+        "employee_id": 1003,
+        "name": "Abdul Kadar",
+        "status": "bench",
+        "manager": "rohit",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["Python", "SQL"],
+        "experience": "2"
+    },
+    {
+        "employee_id": 1004,
+        "name": "John Paul",
+        "status": "bench",
+        "manager": "rohit",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["React", "Python"],
+        "experience": "7"
+    },
+    {
+        "employee_id": 1017,
+        "name": "Gangaram",
+        "status": "projectbench",
+        "manager": "karan",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "request_waiting",
+        "profiles":["Python", "SQL"],
+        "experience": "8"
+    },
+    {
+        "employee_id": 1018,
+        "name": "Shreya",
+        "status": "projectbench",
+        "manager": "karan",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "locked",
+        "profiles":["React", "Python", "SQL"],
+        "experience": "2"
+    },
+    {
+        "employee_id": 1019,
+        "name": "Ashwini Kulkarni",
+        "status": "projectbench",
+        "manager": "karan",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "request_waiting",
+        "profiles":["React", "Core Java"],
+        "experience": "2"
+    },
+    {
+        "employee_id": 1020,
+        "name": "Amulya",
+        "status": "projectbench",
+        "manager": "karan",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["SQL", "Spring Boot", "Angular"],
+        "experience": "7"
+    },
+    {
+        "employee_id": 1021,
+        "name": "Vidharth",
+        "status": "projectbench",
+        "manager": "karan",
+        "wfm_manager": "lokesh",
+        "email": "writevinodh@gmail.com",
+        "lockstatus": "not_requested",
+        "profiles":["PL SQL", "Python", "SQL"],
+        "experience": "2"
+    }
+]
