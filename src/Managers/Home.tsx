@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { PopupContent, WfmPopupContent } from "../WFM/SoftLockPopup";
 import JsonData from '../DataFactory/sample.json';
+import axios from "axios";
 
 const ManagerHome=()=>{
     const [name, setName] = useState("");
@@ -40,6 +41,29 @@ const ManagerTableView = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [myItem, setMyItem] = useState({});
+    const [employeeList, setEmployeeList] = useState([]);
+    const [modalId, setModalId] = useState(-1);
+    const [modalName, setModalName] = useState('');
+    
+    const requestLock = (managerId: any, managerName: any) => {
+        setModalId(managerId);
+        setModalName(managerName)
+        setShow(true);
+    }
+
+    useEffect(()=> {
+        const username = localStorage.getItem("username");
+        axios.post("http://localhost:8000/api/employeeswithskill",{ 
+            username: username 
+        })
+        .then(function (response) {
+            setEmployeeList(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }, []);
+
     const DisplayData = JsonData.map(
         (info) => {
             return (
@@ -68,7 +92,16 @@ const ManagerTableView = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {DisplayData}
+                {employeeList.map((employee, i) => (
+                    <tr key={i}>
+                    <td>{employee["EmployeeID"]}</td>
+                    <td>{employee["Name"]}</td>
+                    <td>{employee["Skills"]}</td>
+                    <td>{employee["Experience"]}</td>
+                    <td>{employee["Manager"]}</td>
+                    <td><Button variant="primary" onClick={ ()=> requestLock(employee["EmployeeID"], employee["Manager"]) }>Request Lock</Button></td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
 

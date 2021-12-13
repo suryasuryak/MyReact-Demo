@@ -3,13 +3,52 @@ import { WfmPopupContent } from "../../WFM/SoftLockPopup";
 import JsonData from '../../DataFactory/sample.json';
 import { useEffect, useState } from "react";
 import "./WFMTableView.css"
+import axios from "axios";
 const WFMTableView = ({response}:any) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    useEffect(() =>{
+    const [employeeList, setEmployeeList] = useState([]);
+    const [modalId, setModalId] = useState(-1);
+    const [modalName, setModalName] = useState('');
+    
+    const requestLock = (managerId: any, managerName: any) => {
+        setModalId(managerId);
+        setModalName(managerName)
+        setShow(true);
+    }
+    useEffect(()=> {
+        const username = localStorage.getItem("username");
+        axios.post("http://localhost:8000/api/employeeswithskill",{ 
+            username: username 
+        })
+        .then(function (response) {
+            setEmployeeList(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }, []);
 
-    }, [])
+
+    const updateSoftLock = () => {
+        let employee_id = modalId;
+        let manager_name = modalName;
+        console.log(employee_id);
+        
+        axios.put("http://localhost:8000/manager/insertsoftlock",{ 
+            employeeid: employee_id,
+            manager: manager_name,
+            requestmessage: "value"
+        })
+        .then(function (response) {
+            setShow(false);
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
     const DisplayData = JsonData.map(
         (info) => {
             return (

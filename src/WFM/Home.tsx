@@ -40,8 +40,8 @@ const WFMHome = () => {
                 {invokeAction("Call_WFM_Data")}
             }
             }>Get</button> */}
-
-            <EmployeeHOC></EmployeeHOC>
+            <WFMTableView></WFMTableView>
+            {/* <EmployeeHOC></EmployeeHOC> */}
         </div>
     )
 }
